@@ -1,0 +1,7 @@
+package com.XadrezCompleto.padroes;
+
+public interface Transferidor {
+	public static Transferidor getTransferidor();
+	public void apresentar(TabuleiroInfo inf);
+	public int[] waitNextPos();
+}

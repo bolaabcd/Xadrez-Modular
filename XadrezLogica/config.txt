@@ -1,0 +1,4 @@
+Caminho do Plugin Apresentador:
+Presenter.jar
+Caminho Relativo:
+True

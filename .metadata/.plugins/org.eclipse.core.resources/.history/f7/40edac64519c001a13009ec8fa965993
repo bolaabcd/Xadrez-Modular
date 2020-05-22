@@ -1,0 +1,5 @@
+package com.XadrezCompleto.padroes;
+
+public interface Transferidor {
+	public TabileiroInfo sendTabuleiro(TabuleiroInfo tab);
+}

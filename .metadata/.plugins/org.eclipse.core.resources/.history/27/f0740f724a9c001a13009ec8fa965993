@@ -1,0 +1,5 @@
+package com.XadrezCompleto.padroes;
+
+public class TabuleiroInfo {
+	public PecaCor pecaAtual;
+}

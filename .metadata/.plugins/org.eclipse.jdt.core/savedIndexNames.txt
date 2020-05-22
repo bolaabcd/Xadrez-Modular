@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/home/artur/eclipse-workspaces/Xadrez/.metadata/.plugins/org.eclipse.jdt.core
+3279215680.index
+4147290474.index

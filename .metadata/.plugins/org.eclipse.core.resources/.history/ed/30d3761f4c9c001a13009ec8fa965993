@@ -1,0 +1,3 @@
+module xadrezCompleto {
+	exports com.XadrezCompleto.padroes;
+}

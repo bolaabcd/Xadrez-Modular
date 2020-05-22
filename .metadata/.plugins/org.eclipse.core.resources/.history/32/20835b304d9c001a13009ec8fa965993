@@ -1,0 +1,20 @@
+package com.XadrezLogica.main;
+
+public class Main {
+	public void main(String[] args) {
+		if(args[0]==null)throw new IllegalArgumentException("Infomre o caminho do plugin de apresentação");
+		File localPlugin = new File("//home/artur/Desktop/pogramando/Plugins/Plugin.jar");
+		URLClassLoader child = new URLClassLoader (
+		        //new URL[] {new URL("file:///home/artur/Desktop/pogramando/Plugins/Plugin.jar")}, Main.class.getClassLoader());
+				new URL[] { new URL("jar", "", "file:" + file.getAbsolutePath() + "!/") }, Main.class.getClassLoader());
+
+		System.out.println(child.getURLs()[0]);
+		//Class clazz = child.loadClass("tentativaPlugin.Mensagem");
+		Class<?> clazz = Class.forName("tentativaPlugin.Mensagem", true, child);
+		System.out.println(clazz.getMethods());
+		Method getMessage = clazz.getMethod("getMessage");
+		Strint res=(Strint) getMessage.invoke(null);
+		System.out.println(res.boi);
+		System.out.println(res.foo);
+	}
+}

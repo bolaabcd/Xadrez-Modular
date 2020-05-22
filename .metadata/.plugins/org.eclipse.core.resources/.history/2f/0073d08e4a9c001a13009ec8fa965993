@@ -1,0 +1,8 @@
+package com.XadrezCompleto.padroes;
+
+public class TabuleiroInfo {
+	public PecaCor proximoJogador;
+	public String mensagemErro;
+	public String mensagemAviso;
+	
+}

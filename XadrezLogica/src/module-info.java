@@ -1,0 +1,3 @@
+module xadrezLogica {
+	requires xadrezPadroes;
+}
