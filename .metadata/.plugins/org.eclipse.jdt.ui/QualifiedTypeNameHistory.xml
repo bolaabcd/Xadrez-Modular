@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="jdk.nashorn.internal.ir.debug.JSONWriter"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.net.URLClassLoader"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="com.XadrezCompleto.padroes.ArquivosGerais"/>
+    <fullyQualifiedTypeName name="com.XadrezCompleto.padroes.TabuleiroInfo"/>
+    <fullyQualifiedTypeName name="com.XadrezCompleto.padroes.Peca"/>
+    <fullyQualifiedTypeName name="com.XadrezCompleto.padroes.PecaTipo"/>
+    <fullyQualifiedTypeName name="com.XadrezCompleto.padroes.PecaCor"/>
+    <fullyQualifiedTypeName name="com.XadrezCompleto.padroes.Transferidor"/>
+</qualifiedTypeNameHistroy>

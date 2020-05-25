@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 import com.XadrezCompleto.padroes.ArquivosGerais;
+import com.XadrezCompleto.padroes.CorFundo;
 import com.XadrezCompleto.padroes.Peca;
 import com.XadrezCompleto.padroes.PecaCor;
 import com.XadrezCompleto.padroes.PecaTipo;
@@ -59,21 +60,29 @@ public class Main {
 		inicial.pecas[7][2]=new Peca(PecaTipo.BISPO, PecaCor.PRETO);
 		inicial.pecas[7][5]=new Peca(PecaTipo.BISPO, PecaCor.PRETO);
 		
-		inicial.pecas[0][3]=new Peca(PecaTipo.RAINHA, PecaCor.BRANCO);
-		inicial.pecas[0][4]=new Peca(PecaTipo.REI, PecaCor.BRANCO);
-		inicial.pecas[7][3]=new Peca(PecaTipo.RAINHA, PecaCor.PRETO);
-		inicial.pecas[7][4]=new Peca(PecaTipo.REI, PecaCor.PRETO);
+		inicial.pecas[0][3]=new Peca(PecaTipo.REI, PecaCor.BRANCO);
+		inicial.pecas[0][4]=new Peca(PecaTipo.RAINHA, PecaCor.BRANCO);
+		inicial.pecas[7][3]=new Peca(PecaTipo.REI, PecaCor.PRETO);
+		inicial.pecas[7][4]=new Peca(PecaTipo.RAINHA, PecaCor.PRETO);
 		
 		for(int i=0;i<8;i++) {
 			inicial.pecas[1][i]=new Peca(PecaTipo.PEAO, PecaCor.BRANCO);
 			inicial.pecas[6][i]=new Peca(PecaTipo.PEAO, PecaCor.PRETO);
 		}
 		
+		for(int i=0;i<inicial.quadradosFundo.length;i++)
+			for(int j=0;j<inicial.quadradosFundo[i].length;j++)
+				if((i+j)%2==0)
+					inicial.quadradosFundo[i][j]=CorFundo.BRANCO;
+				else
+					inicial.quadradosFundo[i][j]=CorFundo.PRETO;
+		
+		
 		trans.apresentar(inicial);
 		int[] newpos;
 		while((newpos=trans.waitNextPos())!=null) {
 			//Interpretar os resultados aqui!
-			System.out.println("Pos: "+ newpos);
+			trans.apresentar(inicial);
 		}
 	}
 }
