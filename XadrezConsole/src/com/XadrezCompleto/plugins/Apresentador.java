@@ -3,14 +3,19 @@ package com.XadrezCompleto.plugins;
 import java.util.Scanner;
 
 import com.XadrezCompleto.padroes.ChessException;
+import com.XadrezCompleto.padroes.ChessInvalidStateException;
 import com.XadrezCompleto.padroes.CorFundo;
 import com.XadrezCompleto.padroes.Peca;
 import com.XadrezCompleto.padroes.PecaCor;
 import com.XadrezCompleto.padroes.PecaTipo;
+import com.XadrezCompleto.padroes.Posicao;
 import com.XadrezCompleto.padroes.TabuleiroInfo;
 import com.XadrezCompleto.padroes.Transferidor;
 
 public class Apresentador implements Transferidor{
+	public static final Scanner sc=new Scanner(System.in);
+	
+	
 	public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
 	public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
@@ -105,13 +110,38 @@ public class Apresentador implements Transferidor{
 			throw new ChessException("Peca Inválida!");
 		}
 	}
+	
+	private int letraToNumero(String letra) throws ChessInvalidStateException {
+		switch(letra.toLowerCase()) {
+		case "a":
+			return 1;
+		case "b":
+			return 2;
+		case "c":
+			return 3;
+		case "d":
+			return 4;
+		case "e":
+			return 5;
+		case "f":
+			return 6;
+		case "g":
+			return 7;
+		case "h":
+			return 8;
+		default:
+			throw new ChessInvalidStateException("Letra de posição inválida!");
+		}
+	}
 
 	@Override
-	public int[] waitNextPos() {
-		Scanner sc=new Scanner(System.in);
-		int[] res=new int[] {sc.nextInt(),sc.nextInt()};
+	public Posicao waitNextPos () throws ChessInvalidStateException {
+		return new Posicao(letraToNumero(sc.next()),sc.nextInt());
+	}
+
+	@Override
+	public void fechar() {
 		sc.close();
-		return res;
 	}
 
 }
