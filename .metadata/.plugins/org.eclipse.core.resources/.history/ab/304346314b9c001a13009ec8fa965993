@@ -1,6 +1,0 @@
-package com.XadrezCompleto.padroes;
-
-public class Peca {
-	public PecaTipo tipo;
-	public PecaCor cor;
-}

@@ -1,7 +1,0 @@
-package com.XadrezCompleto.plugins;
-
-import com.XadrezCompleto.padroes.Transferidor;
-
-public class Apresentador implements Transferidor{
-
-}

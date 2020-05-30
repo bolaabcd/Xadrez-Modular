@@ -34,11 +34,21 @@ public class Apresentador implements Transferidor{
 	public static final String ANSI_PURPLE = "\u001B[35m";
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
-
+	
 	@Override
 	public void apresentar(TabuleiroInfo tinfo) {
 		System.out.print("\033[H\033[2J");  
 		System.out.flush();
+		
+		for(String msg:tinfo.mensagensErro)
+			System.out.println(ANSI_RED+msg+ANSI_RESET);
+		for(String msg:tinfo.mensagensAviso)
+			System.out.println(ANSI_YELLOW+msg+ANSI_RESET);
+		
+		
+		
+		System.out.println();
+		
 		for (int i=0;i<tinfo.pecas.length;i++) {
 			System.out.print((8-i)+" ");
 			
@@ -134,9 +144,13 @@ public class Apresentador implements Transferidor{
 		}
 	}
 
+	
 	@Override
 	public Posicao waitNextPos () throws ChessInvalidStateException {
-		return new Posicao(letraToNumero(sc.next()),sc.nextInt());
+		int x=letraToNumero(sc.next());
+		int y=sc.nextInt();
+		if(x>8||x<1||y>8||y<1)throw new ChessInvalidStateException("Posição inválida!");
+		return new Posicao(x,y);
 	}
 
 	@Override

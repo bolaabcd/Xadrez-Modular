@@ -10,6 +10,7 @@ public class TabuleiroInfo {
 	public final Peca[][] pecas = new Peca[8][8];
 	public final CorFundo[][] quadradosFundo = new CorFundo[8][8];
 	public final ArrayList<Posicao> historicoMovimentos=new ArrayList<Posicao>();
+	public final ArrayList<Peca> pecasComidas=new ArrayList<Peca>();
 	
 	public static final TabuleiroInfo getDefault() {
 		TabuleiroInfo inicial=new TabuleiroInfo();

@@ -1,5 +1,0 @@
-package com.XadrezCompleto.padroes;
-
-public enum CorFundo {
-
-}
